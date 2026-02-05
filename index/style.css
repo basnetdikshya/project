@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff4d6d, #ff85a1, #ffd6e0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  color: white;
+  z-index: 10;
+  padding: 20px;
+}
+
+.container h1 {
+  font-size: 3rem;
+  animation: glow 2s infinite alternate;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background: white;
+  color: #ff4d6d;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.yes:hover {
+  transform: scale(1.1);
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: black;
+  color: white;
+  position: relative;
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0px 0px 10px white;
+  }
+  to {
+    text-shadow: 0px 0px 25px white;
+  }
+}
+
+/* Hearts animation */
+.hearts span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: hearts 8s linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span::before,
+.hearts span::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.hearts span::before {
+  top: -10px;
+  left: 0;
+}
+
+.hearts span::after {
+  left: -10px;
+  top: 0;
+}
+
+/* Different positions */
+.hearts span:nth-child(1) { left: 10%; animation-duration: 6s; }
+.hearts span:nth-child(2) { left: 20%; animation-duration: 8s; width: 15px; height: 15px; }
+.hearts span:nth-child(3) { left: 30%; animation-duration: 7s; }
+.hearts span:nth-child(4) { left: 40%; animation-duration: 9s; width: 25px; height: 25px; }
+.hearts span:nth-child(5) { left: 50%; animation-duration: 6s; }
+.hearts span:nth-child(6) { left: 60%; animation-duration: 10s; width: 18px; height: 18px; }
+.hearts span:nth-child(7) { left: 70%; animation-duration: 7s; }
+.hearts span:nth-child(8) { left: 80%; animation-duration: 9s; width: 30px; height: 30px; }
+.hearts span:nth-child(9) { left: 90%; animation-duration: 8s; }
+.hearts span:nth-child(10){ left: 95%; animation-duration: 6s; }
+
+/* Floating hearts */
+@keyframes hearts {
+  0% {
+    bottom: -50px;
+    transform: translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    bottom: 110%;
+    transform: translateX(-80px) rotate(45deg);
+    opacity: 0;
+  }
+}
