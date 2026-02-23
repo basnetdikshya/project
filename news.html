@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Sharing Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>📰 Daily News Portal</h1>
+    <p>Share and Read Latest News</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Form to Add News -->
+    <div class="news-form">
+      <h2>Share Your News</h2>
+
+      <input type="text" id="title" placeholder="Enter News Title" required>
+      <textarea id="content" placeholder="Enter News Content" required></textarea>
+      <input type="text" id="author" placeholder="Enter Author Name" required>
+
+      <button onclick="addNews()">Post News</button>
+    </div>
+
+    <!-- Display News -->
+    <div class="news-list">
+      <h2>Latest News</h2>
+      <div id="newsContainer"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
